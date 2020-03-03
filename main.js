@@ -156,6 +156,11 @@ addEventListener("mousemove", e=>{
     mouse.x = (e.x - (document.documentElement.clientWidth / 2)) / (document.documentElement.clientWidth / 2);
     mouse.y = (e.y - (document.documentElement.clientHeight / 2)) / (document.documentElement.clientHeight / 2);
 });
+addEventListener("touchmove", e=>{
+    mouse.x = (e.touches[0].clientX - (document.documentElement.clientWidth / 2)) / (document.documentElement.clientWidth / 2);
+    mouse.y = (e.touches[0].clientY - (document.documentElement.clientHeight / 2)) / (document.documentElement.clientHeight / 2);
+    mouse.z = 2.5;
+});
 
 addEventListener("mousewheel", e=>{
     mouse.z -= e.deltaY * 0.001;
